@@ -109,7 +109,7 @@ function checkColumn(tempArray) {
 
 
 function checkDiagonal(tempArray) {
-
+let winner
   if (
     tempArray[0][0] === tempArray[1][1] &&
     tempArray[0][0] === tempArray[2][2]
@@ -132,13 +132,13 @@ function checkDiagonal(tempArray) {
         ? "noughts"
         : "nobody";
   }
-
+return winner
 }
 
 
 // Set the game state back to its original state to play another game.
 function resetGame() {
-  console.log("resetGame was called");
+  // console.log("resetGame was called");
   gameState = [
     [null, null, null],
     [null, null, null],
@@ -152,4 +152,15 @@ function resetGame() {
 function getBoard() {
   console.log("getBoard was called");
   return gameState;
+}
+
+module = module || {};
+module.exports = {
+  takeTurn: takeTurn,
+  checkWinner: checkWinner,
+  checkRow: checkRow,
+  checkColumn: checkColumn, 
+  checkDiagonal: checkDiagonal,
+  getBoard: getBoard,
+  resetGame: resetGame
 }
