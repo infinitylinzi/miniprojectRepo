@@ -45,7 +45,23 @@ function checkWinner() {
   let tempArray = getBoard();
   let winner = "nobody";
 
-  //to check row
+  checkRow(tempArray)
+  checkColumn(tempArray)
+  checkDiagonal(tempArray)
+
+  if (winner !== "nobody") {
+    return winner;
+  } else if (winner === "nobody" && turnNumber === 9) {
+    return winner;
+  }
+
+  //if yes return winner
+  //resetGame()
+  console.log("checkWinner was called");
+}
+
+function checkRow(tempArray){
+
   for (let i = 0; i < tempArray.length; i++) {
     for (let j = 0; j < tempArray.length; j++) {
       if (j === 0) {
@@ -67,7 +83,9 @@ function checkWinner() {
     }
   }
 
-  //to check column
+}
+function checkColumn(tempArray) {
+
   for (let i = 0; i < 3; i++) {
     for (let j = 0; j < 3; j++) {
       if (j === 0) {
@@ -87,8 +105,11 @@ function checkWinner() {
       }
     }
   }
+}
 
-  //diaganol
+
+function checkDiagonal(tempArray) {
+
   if (
     tempArray[0][0] === tempArray[1][1] &&
     tempArray[0][0] === tempArray[2][2]
@@ -112,16 +133,8 @@ function checkWinner() {
         : "nobody";
   }
 
-  if (winner !== "nobody") {
-    return winner;
-  } else if (winner === "nobody" && turnNumber === 9) {
-    return winner;
-  }
-
-  //if yes return winner
-  //resetGame()
-  console.log("checkWinner was called");
 }
+
 
 // Set the game state back to its original state to play another game.
 function resetGame() {
