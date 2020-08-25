@@ -1,0 +1,22 @@
+{
+  "name": "noughts-and-crosses",
+  "version": "1.0.0",
+  "description": "noughts and crosses game",
+  "main": "academy.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/infinitylinzi/miniprojectRepo.git"
+  },
+  "author": "Linzi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/infinitylinzi/miniprojectRepo/issues"
+  },
+  "homepage": "https://github.com/infinitylinzi/miniprojectRepo#readme",
+  "dependencies": {
+    "jest": "^26.4.2"
+  }
+}
